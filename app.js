@@ -3,6 +3,7 @@ const hbs = require('hbs');
 const request = require('request');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
 var app = express();
 
 // Set up the partials page for static partials (header, footer, etc)
@@ -76,6 +77,6 @@ app.get("/bad", (req, res) => {
   });
 });
 // Express will run on port 3000
-app.listen(3000, () => {
-  console.log("The server has started!");
+app.listen(port, () => {
+  console.log(`The server has started on ${port}`);
 });
