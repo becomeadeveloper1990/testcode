@@ -10,7 +10,7 @@ var app = express();
 hbs.registerPartials(__dirname + "/views/partials");
 // Set up a view engine for Handlebars
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public'));
+
 
 app.use((req, res, next) => {
   var now = new Date().toString();
@@ -37,7 +37,7 @@ hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 });
 // Set up a folder for static files.  Such as stylesheets and JavaScript files
-
+app.use(express.static(__dirname + '/public'));
 // Express route for the root folder
 app.get("/", (req, res) => {
   res.render("home", {
