@@ -75,6 +75,10 @@ app.get("/about", (req, res) => {
     welcomeMessage: "Welcome to my about page!"
   });
 });
+// Route for the project.hbs page
+app.get("/project", (req, res) => {
+  res.render("project");
+});
 // Express router for the bad page
 app.get("/bad", (req, res) => {
   res.send({
