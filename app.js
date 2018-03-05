@@ -77,7 +77,9 @@ app.get("/about", (req, res) => {
 });
 // Route for the project.hbs page
 app.get("/project", (req, res) => {
-  res.render("project");
+  res.render("project", {
+    pageTitle: "Projects Page!"
+  });
 });
 // Express router for the bad page
 app.get("/bad", (req, res) => {
